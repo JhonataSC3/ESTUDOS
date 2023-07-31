@@ -1,0 +1,48 @@
+<script>
+// var é global e, também local
+// javascript (JS) le o codigo de maneira vertical (cima para baixo), linha a linha
+// o JS com a função var ele faz algo automatico... na função abaixo no consolelog temos o resultado UNDEFINED, pois o JS puxa o var para cima, ficando assim:
+
+/*
+var x
+console.log('>existe x antes do bloco', x)
+{
+    var x = 0
+}
+
+*/ 
+
+// isso que ele faz se chama de hosting = elevação
+// é o mesmo codigo, mas é um scope da variável do tipo VAR
+console.log('>existe x antes do bloco', x)
+{
+    var x = 0
+}
+
+</script>
+
+<script>
+
+    // const e let são locais e só funcionam no escopo (Scope) onde foi criado
+
+    const y = 1;
+    {
+        {
+            {
+                {
+                    const y = 0
+                    console.log('> existe Y', y)
+                    // são const diferentes pois, estão em Escopos diferentes assim podendo receber qualquer atribuição (y) com valores diferentes (0, 1) 
+                }
+            }
+        }
+    }
+
+    console.log('>existe y depois do bloco?', y)
+
+    /* Diferentemente de var, const e let são variáveis com escopo local, ou seja,
+     só são visíveis no escopo onde foram criadas e em escopos interiores ao de criação. 
+     Em uma variável let, porém, pode-se alterar o valor em um escopo e o valor irá persistir no escopo de criação.
+    */ 
+
+</script>
